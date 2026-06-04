@@ -4,7 +4,7 @@
 
 Proyecto pedagógico desarrollado para los estudiantes de **5° Año del Técnico en Programación** del **Colegio Técnico Provincial "Olga Bronzovich de Arko"** — Ushuaia, Tierra del Fuego, Argentina.
 
-🔗 **[Jugar online →](https://prof-nkocussi.github.io/redes-i-games/)**
+🔗 **[Jugar online →](https://prof-nkocussi.github.io/App-redes-games/)**
 
 ---
 
@@ -41,7 +41,7 @@ La app incluye un mini-juego por cada Trabajo Práctico del año:
 ## 🚀 Cómo usarlo
 
 ### Opción 1: Online
-Entrar a [https://prof-nkocussi.github.io/redes-i-games/](https://prof-nkocussi.github.io/redes-i-games/) desde cualquier navegador.
+Entrar a [https://prof-nkocussi.github.io/App-redes-games/](hhttps://prof-nkocussi.github.io/App-redes-games/) desde cualquier navegador.
 
 ### Opción 2: Local
 1. Descargar el archivo `index.html`
@@ -63,8 +63,7 @@ Este proyecto es de libre uso pedagógico. Si querés adaptarlo a tu materia:
 ## 👤 Autor
 
 **Prof. Nicolás A. Cussi**
-Profesor de Redes I y Software II — Técnico en Programación
-Colegio Técnico Provincial "Olga Bronzovich de Arko" — Ushuaia, TDF
+Docente de la Especialidad Programación — Colegio Técnico Provincial "Olga Bronzovich de Arko" — Ushuaia, TDF
 GitHub: [@Prof-NkoCussi](https://github.com/Prof-NkoCussi)
 
 ---
