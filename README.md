@@ -49,25 +49,10 @@ Entrar a [https://prof-nkocussi.github.io/App-redes-games/](hhttps://prof-nkocus
 
 ---
 
-## 👨‍🏫 Para docentes
-
-Este proyecto es de libre uso pedagógico. Si querés adaptarlo a tu materia:
-
-1. Cloná el repositorio
-2. Modificá el array `TPS` en `index.html` con tus contenidos
-3. Ajustá la identidad visual (CSS variables)
-4. Subilo a tu propio GitHub Pages
-
----
-
 ## 👤 Autor
 
 **Prof. Nicolás A. Cussi**
-Docente de la Especialidad Programación — Colegio Técnico Provincial "Olga Bronzovich de Arko" — Ushuaia, TDF
+- Docente de la Especialidad Programación — Colegio Técnico Provincial "Olga Bronzovich de Arko" — Ushuaia, TDF
 GitHub: [@Prof-NkoCussi](https://github.com/Prof-NkoCussi)
 
 ---
-
-## 📄 Licencia
-
-Material de uso pedagógico interno. Libre para uso educativo.
