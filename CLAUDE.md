@@ -11,7 +11,7 @@
 
 Cada Trabajo Práctico (TP) tiene su propio mini-juego con mecánicas adecuadas al contenido. La idea es que los estudiantes (14-15 años) refuercen conceptos jugando, no solo leyendo apuntes.
 
-**Estado actual:** TP1 implementado (sopa de letras). Resto de los TPs (2 a 12) en estado "Próximamente" en el menú.
+**Estado actual:** TP1 (sopa de letras) y TP2 (drag & drop, 3 rondas) implementados. Resto de los TPs (3 a 12) en estado "Próximamente" en el menú.
 
 **Hosting:** GitHub Pages → `https://prof-nkocussi.github.io/redes-i-games/`
 
@@ -75,40 +75,69 @@ Cada Trabajo Práctico (TP) tiene su propio mini-juego con mecánicas adecuadas 
 ## 📂 Estructura del proyecto
 
 ```
-redes-i-games/
-├── index.html        ← Archivo principal (todo el código en un solo HTML)
-├── README.md         ← Documentación pública del repo
-├── CLAUDE.md         ← Este archivo (contexto para Claude Code)
+App-RedesGames/
+├── index.html               ← Solo el menú principal (cards de los 12 TPs)
+├── css/
+│   ├── base.css             ← Variables CSS, reset, fondo animado, tipografías
+│   ├── menu.css             ← Estilos del menú principal
+│   └── shared.css           ← Estilos compartidos: botones, confetti, animaciones
+├── js/
+│   ├── main.js              ← Catálogo TPS, renderMenu(), navegación
+│   └── shared.js            ← Funciones reutilizables: launchConfetti(), markPlayed(), getPlayedCount()
+├── games/
+│   ├── tp1/
+│   │   ├── index.html       ← Página del juego TP1 (sopa de letras)
+│   │   ├── tp1.css          ← Estilos específicos del TP1
+│   │   └── tp1.js           ← Lógica de la sopa de letras + datos TP1_WORDS
+│   └── tp2/
+│       ├── index.html       ← Página del juego TP2 (drag & drop)
+│       ├── tp2.css          ← Estilos específicos del TP2
+│       └── tp2.js           ← Lógica del drag & drop + datos R1/R2/R3
+├── specs/
+│   └── tp2-spec.md          ← Spec de diseño del TP2
+├── CLAUDE.md
+├── README.md
 └── .gitignore
 ```
 
-**IMPORTANTE:** Todo el código (HTML + CSS + JS) está en un único archivo `index.html`. No usamos frameworks ni librerías externas (solo Google Fonts via CDN). Esto es intencional para que sea portable, fácil de subir a Classroom como respaldo, y fácil de mantener.
+**IMPORTANTE:** El proyecto usa arquitectura modular. Cada juego es una página independiente en `games/tpN/`. No hay frameworks ni librerías externas (solo Google Fonts via CDN). Las rutas en `<link>` y `<script>` son siempre **relativas** (sin `/` inicial) para compatibilidad con GitHub Pages.
+
+**Rutas relativas en juegos:** desde `games/tpN/index.html`, los assets compartidos se cargan así:
+```html
+<link rel="stylesheet" href="../../css/base.css">
+<script src="../../js/shared.js"></script>
+```
 
 ---
 
 ## 🧩 Arquitectura de la app
 
-### Pantallas
-1. **`#scr-menu`** — Menú principal con grid de 12 cards (una por TP)
-2. **`#scr-game`** — Pantalla de juego activa (cambia según el TP seleccionado)
-3. **`#modal-res`** — Modal de resultados con confetti
+### Navegación entre páginas
+- **Menú → juego:** `window.location.href = 'games/tp1/index.html'` (desde `js/main.js`)
+- **Juego → menú:** `window.location.href = '../../index.html'` (desde `goMenu()` en cada juego)
 
-### Catálogo de TPs (objeto `TPS`)
-Cada TP es un objeto en el array `TPS` con esta estructura:
+### Catálogo de TPs (objeto `TPS` en `js/main.js`)
+Cada TP es un objeto con esta estructura:
 ```js
 {
   n: 1,                    // Número del TP
   title: "...",            // Título
-  type: "Sopa de Letras",  // Tipo de juego
+  type: "Sopa de Letras",  // Tipo de juego (se muestra en la card)
   desc: "...",             // Descripción corta para la card
   active: true/false,      // Si está disponible o "Próximamente"
-  game: "wordsearch",      // ID del juego a cargar
-  words: [...]             // Datos específicos del juego (varía por tipo)
+  game: "wordsearch",      // ID del juego (informativo, ya no controla routing)
 }
 ```
+Los **datos del juego** (palabras, componentes, etc.) viven en el JS de cada juego (`tp1.js`, `tp2.js`), no en el catálogo.
+
+### Funciones compartidas (`js/shared.js`)
+- `launchConfetti()` — confetti animado, usable desde cualquier juego
+- `markPlayed(n)` — marca el TP n como jugado en `localStorage`
+- `getPlayedCount()` — cuenta TPs jugados (usada por el menú)
 
 ### Persistencia
 - `localStorage` clave `redes_played` → objeto con TPs ya jugados (para el stat de "Jugados")
+- `localStorage` clave `redes_best_tp2` → mejor tiempo del TP2 en segundos
 - No hay backend, todo es client-side
 
 ---
@@ -120,7 +149,7 @@ Cada TP es un objeto en el array `TPS` con esta estructura:
 | TP | Tema | Mecánica del juego | Estado |
 |---|---|---|---|
 | **TP1** | Señales, Medios y Topologías | Sopa de Letras con pistas conceptuales | ✅ Implementado |
-| **TP2** | Clasificación, Componentes y Diseño | Drag & Drop (clasificar redes + arrastrar componentes) | 🔜 Pendiente |
+| **TP2** | Clasificación, Componentes y Diseño | Drag & Drop (clasificar redes + arrastrar componentes) | ✅ Implementado |
 | **TP3** | Cableado 568A/568B + OSI/TCP-IP | Armá el cable + Ordená las capas | 🔜 Pendiente |
 | **TP4** | IPv4, Subnetting básico e IPv6 | ¿Pública o Privada? + Calculadora de subredes | 🔜 Pendiente |
 | **TP5** | VLSM/CIDR + NAT | Simulador visual de NAT | 🔜 Pendiente |
@@ -233,19 +262,23 @@ Ejemplo del TP1 (ya implementado):
    - Concepto/mecánica clara
    - Datos del juego (palabras, conceptos, escenarios, etc.) con sus pistas pedagógicas
    - Color de acento del TP
+   - Guardar en `specs/tpN-spec.md`
 
 2. **Implementación en Claude Code:**
-   - Agregar el TP al array `TPS` con `active: true`
-   - Crear las funciones del juego (init, render, lógica de interacción, resultados)
-   - Crear su pantalla `#scr-game-tpN` o reutilizar `#scr-game` si la estructura es similar
-   - Probar local (abrir `index.html` en navegador)
+   - En `js/main.js`: actualizar la entrada del TP en el array `TPS` con `active: true`
+   - Crear la carpeta `games/tpN/` con tres archivos:
+     - `index.html` — página del juego (carga `../../css/base.css`, `../../css/shared.css`, `tpN.css`, `../../js/shared.js`, `tpN.js`)
+     - `tpN.css` — estilos específicos del juego
+     - `tpN.js` — toda la lógica del juego + datos + `goMenu()` que navega a `../../index.html`
+   - El juego arranca automáticamente al cargar la página (no hay routing interno)
+   - Probar local (abrir `index.html` raíz en navegador, hacer click en la card)
 
-3. **Deploy:**
-   ```bash
-   git add .
-   git commit -m "feat: agregar mini-juego TP2 (drag & drop componentes)"
-   git push origin main
+3. **Commit:**
    ```
+   git add .
+   git commit -m "feat: agregar mini-juego TPn (descripción breve)"
+   ```
+   Luego el push lo hace Nicolás.
 
 4. **Verificar:** entrar a la URL pública y probar.
 
@@ -262,12 +295,14 @@ Ejemplo del TP1 (ya implementado):
 ## ⚠️ Reglas importantes
 
 1. **No usar frameworks ni librerías externas** (mantener vanilla HTML/CSS/JS)
-2. **Mantener todo en un solo archivo `index.html`** (a menos que se decida lo contrario explícitamente)
-3. **No romper la estética actual** sin consultar (paleta, tipografías, animaciones)
-4. **Cada juego debe tener valor pedagógico real** (no solo "diversión vacía")
-5. **Mobile-first siempre:** los alumnos suelen probar desde celulares
-6. **No incluir tracking, ads ni nada externo** que comprometa privacidad
-7. **Idioma:** español argentino siempre en UI y contenidos
+2. **No usar ES Modules** (`import`/`export`) — scripts clásicos para máxima compatibilidad con GitHub Pages
+3. **Cada juego va en su propia carpeta** `games/tpN/` con `index.html`, `tpN.css` y `tpN.js`
+4. **Rutas siempre relativas** (sin `/` inicial) para que GitHub Pages funcione correctamente
+5. **No romper la estética actual** sin consultar (paleta, tipografías, animaciones)
+6. **Cada juego debe tener valor pedagógico real** (no solo "diversión vacía")
+7. **Mobile-first siempre:** los alumnos suelen probar desde celulares
+8. **No incluir tracking, ads ni nada externo** que comprometa privacidad
+9. **Idioma:** español argentino siempre en UI y contenidos
 
 ---
 

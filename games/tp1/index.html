@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP1 — Señales, Medios y Topologías · Redes I Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/shared.css">
+  <link rel="stylesheet" href="tp1.css">
+</head>
+<body>
+  <div class="bg-network">
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+  </div>
+
+  <div id="scr-game">
+    <div class="game-layout">
+      <aside class="sidebar">
+        <button class="sb-back" onclick="goMenu()">← Menú</button>
+        <div class="sb-tag">TP 01 · Sopa de Letras</div>
+        <div class="sb-title">Señales, Medios y Topologías</div>
+        <div class="g-timer" id="g-timer">⏱ 0:00</div>
+        <div class="g-pbar"><div class="g-pfill" id="g-pfill"></div></div>
+        <div class="g-ptxt" id="g-ptxt">0 / 12 palabras encontradas</div>
+        <div class="g-wlist">
+          <div class="g-wlist-title">Palabras a encontrar</div>
+          <div id="g-wlist-items"></div>
+        </div>
+        <div class="g-btns">
+          <button class="btn btn-g" onclick="reshuffleGame()">🔀 Rearmar</button>
+          <button class="btn btn-o" onclick="showResults()">🏁 Terminar</button>
+        </div>
+      </aside>
+      <main class="game-main">
+        <div class="grid-wrap" id="grid-wrap">
+          <div class="g-grid" id="g-grid"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="modal-res">
+    <div class="res-box">
+      <div class="res-title" id="res-title">¡Excelente!</div>
+      <div class="res-score" id="res-score">12/12</div>
+      <div class="res-time" id="res-time">⏱ Tiempo: 0:00</div>
+      <div class="res-tags" id="res-tags"></div>
+      <div class="res-acts">
+        <button class="btn btn-c" onclick="closeResults()">Seguir jugando</button>
+        <button class="btn btn-g" onclick="reshuffleFromRes()">🔀 Rearmar</button>
+        <button class="btn btn-o" onclick="goMenu()">🏠 Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/shared.js"></script>
+  <script src="tp1.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP2 — Clasificación, Componentes y Diseño de Red · Redes I Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/shared.css">
+  <link rel="stylesheet" href="tp2.css">
+</head>
+<body>
+  <div class="bg-network">
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+  </div>
+
+  <div id="tp2-intro">
+    <div class="tp2-intro-wrap">
+      <div class="tp2-intro-tag">TP 02 · Drag &amp; Drop</div>
+      <h2 class="tp2-intro-title">Clasificación, Componentes<br>y Diseño de Red</h2>
+      <p class="tp2-intro-sub">3 rondas progresivas — el cronómetro corre desde que empezás</p>
+      <div class="tp2-rounds-preview">
+        <div class="tp2-rnd-card">
+          <div class="tp2-rnd-num">Ronda 1</div>
+          <div class="tp2-rnd-icon">🏷</div>
+          <div class="tp2-rnd-name">¿Qué tipo de red es?</div>
+        </div>
+        <div class="tp2-rnd-card">
+          <div class="tp2-rnd-num">Ronda 2</div>
+          <div class="tp2-rnd-icon">🔧</div>
+          <div class="tp2-rnd-name">Función de componentes</div>
+        </div>
+        <div class="tp2-rnd-card">
+          <div class="tp2-rnd-num">Ronda 3</div>
+          <div class="tp2-rnd-icon">🏫</div>
+          <div class="tp2-rnd-name">Armá la red del aula</div>
+        </div>
+      </div>
+      <div class="tp2-intro-btns">
+        <button class="btn btn-grn" onclick="tp2StartGame()">▶ Empezar Juego</button>
+        <button class="btn btn-g" onclick="goMenu()">← Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="tp2-game" style="display:none">
+    <div class="tp2-game-wrap">
+      <div class="tp2-header">
+        <button class="sb-back" onclick="goMenu()">← Menú</button>
+        <span class="tp2-rnd-badge" id="tp2-rnd-badge">Ronda 1 de 3</span>
+        <span class="tp2-rnd-title" id="tp2-rnd-title">¿Qué tipo de red es?</span>
+        <span class="tp2-htimer" id="tp2-timer">⏱ 0:00</span>
+        <span class="tp2-herrs">Errores: <span id="tp2-errs">0</span></span>
+      </div>
+      <div class="tp2-content" id="tp2-content"></div>
+    </div>
+  </div>
+
+  <div id="modal-tp2">
+    <div class="tp2-res-box">
+      <div class="tp2-res-sub">TP 02 · Completado</div>
+      <div class="tp2-res-title">🏆 ¡TP2 Completado!</div>
+      <div class="tp2-medal" id="tp2-medal">🥇</div>
+      <div class="tp2-medal-name" id="tp2-medal-name">ORO</div>
+      <div class="tp2-res-time" id="tp2-res-time">⏱ Tiempo: 0:00</div>
+      <div class="tp2-res-stats" id="tp2-res-stats"></div>
+      <div id="tp2-badges"></div>
+      <div class="tp2-rondas">
+        <div class="tp2-ronda-row"><span class="tp2-check">✓</span> R1 — Clasificación de redes</div>
+        <div class="tp2-ronda-row"><span class="tp2-check">✓</span> R2 — Función de componentes</div>
+        <div class="tp2-ronda-row"><span class="tp2-check">✓</span> R3 — Armado de la red del aula</div>
+      </div>
+      <div class="tp2-res-acts">
+        <button class="btn btn-grn" onclick="tp2Replay()">🔄 Jugar de nuevo</button>
+        <button class="btn btn-g" onclick="goMenu()">🏠 Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/shared.js"></script>
+  <script src="tp2.js"></script>
+</body>
+</html>

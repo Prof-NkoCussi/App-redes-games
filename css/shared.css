@@ -1,0 +1,45 @@
+.btn {
+  padding: 0.65rem 0.9rem; border: none; border-radius: 10px;
+  font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 0.85rem;
+  cursor: pointer; transition: all 0.18s; letter-spacing: 0.03em;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-c { background: var(--cyan); color: var(--bg-deep); }
+.btn-c:hover { box-shadow: 0 6px 22px rgba(34, 211, 238, 0.35); }
+.btn-g { background: var(--surf2); color: var(--txt); border: 1px solid var(--brd); }
+.btn-g:hover { border-color: var(--cyan); color: var(--cyan); }
+.btn-o { background: var(--orange); color: var(--bg-deep); }
+.btn-o:hover { box-shadow: 0 6px 22px rgba(251, 146, 60, 0.35); }
+.btn-grn { background: var(--green); color: var(--bg-deep); }
+.btn-grn:hover { box-shadow: 0 6px 22px rgba(74, 222, 128, 0.35); }
+
+.sb-back {
+  background: var(--surf2); border: 1px solid var(--brd); color: var(--txt-soft);
+  padding: 0.55rem 0.9rem; border-radius: 9px; font-weight: 700; cursor: pointer;
+  font-size: 0.82rem; font-family: 'Manrope', sans-serif; transition: all 0.18s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.sb-back:hover { background: var(--surf); color: var(--cyan); border-color: var(--cyan); }
+
+.float-lbl {
+  position: fixed; font-family: 'Russo One', sans-serif;
+  font-size: 1.4rem; font-weight: 900; pointer-events: none; z-index: 100;
+  animation: fl 1s ease-out forwards;
+}
+@keyframes fl {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 1; transform: translateY(-20px) scale(1.1); }
+  100% { opacity: 0; transform: translateY(-100px) scale(1); }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cf-fall {
+  0% { transform: translateY(-20px) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translateY(105vh) rotate(720deg) scale(0.5); opacity: 0; }
+}
+.cfx { position: fixed; top: 0; z-index: 300; pointer-events: none; animation: cf-fall linear forwards; }
