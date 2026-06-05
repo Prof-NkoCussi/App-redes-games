@@ -483,9 +483,9 @@ function tp3ShowResults() {
 
 function calcMedallaTP3(sec) {
   var min = sec / 60;
-  if (min < 8)  return { medalla: '🥇', nombre: 'ORO',        color: '#facc15', msg: '¡Increíble! Te aprendiste todo.' };
-  if (min < 13) return { medalla: '🥈', nombre: 'PLATA',      color: '#a4b3c9', msg: '¡Muy bien! Excelente trabajo.' };
-  if (min < 20) return { medalla: '🥉', nombre: 'BRONCE',     color: '#fb923c', msg: '¡Lograste completarlo! Buen trabajo.' };
+  if (min < 5) return { medalla: '🥇', nombre: 'ORO',        color: '#facc15', msg: '¡Increíble! Tiempo récord.' };
+  if (min < 7) return { medalla: '🥈', nombre: 'PLATA',      color: '#a4b3c9', msg: '¡Muy bien! Excelente trabajo.' };
+  if (min < 9) return { medalla: '🥉', nombre: 'BRONCE',     color: '#fb923c', msg: '¡Lograste completarlo! Buen trabajo.' };
   return              { medalla: '⭐', nombre: 'COMPLETADO', color: '#a78bfa', msg: '¡Lo terminaste! Lo importante es haber aprendido.' };
 }
 

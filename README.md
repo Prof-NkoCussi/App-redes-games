@@ -2,7 +2,7 @@
 
 > Colección de mini-juegos web educativos para reforzar los contenidos de la materia **Redes I** mediante gamificación.
 
-Proyecto pedagógico desarrollado para los estudiantes de **5° Año del Técnico en Programación** del **Colegio Técnico Provincial "Olga Bronzovich de Arko"** — Ushuaia, Tierra del Fuego, Argentina.
+Proyecto pedagógico desarrollado para estudiantes de **5° Año del Técnico en Programación** del **Colegio Técnico Provincial "Olga Bronzovich de Arko"** 
 
 🔗 **[Jugar online →](https://prof-nkocussi.github.io/App-redes-games/)**
 
@@ -15,9 +15,9 @@ La app incluye un mini-juego por cada Trabajo Práctico del año:
 | TP | Tema | Mini-juego | Estado |
 |---|---|---|---|
 | TP1 | Señales, Medios y Topologías | Sopa de Letras con pistas conceptuales | ✅ |
-| TP2 | Clasificación y Componentes | Drag & Drop | 🔜 |
-| TP3 | Cableado + OSI/TCP-IP | Armá el cable + Ordená capas | 🔜 |
-| TP4 | IPv4 y Subnetting | ¿Pública o Privada? | 🔜 |
+| TP2 | Clasificación y Componentes | Drag & Drop | ✅  |
+| TP3 | Cableado + OSI/TCP-IP | Armá el cable + Ordená capas | ✅  |
+| TP4 | IPv4 y Subnetting | ¿Pública o Privada? | ✅  |
 | TP5 | VLSM + NAT | Simulador de NAT | 🔜 |
 | TP6 | Recursos Compartidos | Gestor de Permisos | 🔜 |
 | TP7 | TCP vs UDP | Elige el Protocolo | 🔜 |
@@ -53,6 +53,6 @@ Entrar a [https://prof-nkocussi.github.io/App-redes-games/](hhttps://prof-nkocus
 
 **Prof. Nicolás A. Cussi**
 - Docente de la Especialidad Programación — Colegio Técnico Provincial "Olga Bronzovich de Arko" — Ushuaia, TDF
-GitHub: [@Prof-NkoCussi](https://github.com/Prof-NkoCussi)
+- GitHub: [@Prof-NkoCussi](https://github.com/Prof-NkoCussi)
 
 ---

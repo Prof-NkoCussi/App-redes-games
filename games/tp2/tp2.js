@@ -330,10 +330,10 @@ function tp2ShowResults() {
 
 function calcMedalla(sec) {
   const m = sec/60;
-  if (m < 8)  return { medalla:'🥇', nombre:'ORO',        color:'#facc15', msg:'¡Increíble! Resolviste todo súper rápido.' };
-  if (m < 12) return { medalla:'🥈', nombre:'PLATA',      color:'#a4b3c9', msg:'¡Muy bien! Tiempo excelente.' };
-  if (m < 18) return { medalla:'🥉', nombre:'BRONCE',     color:'#fb923c', msg:'¡Lograste completarlo! Buen trabajo.' };
-  return           { medalla:'⭐', nombre:'COMPLETADO', color:'#4ade80', msg:'¡Lo terminaste! Lo importante es haber aprendido.' };
+  if (m < 5) return { medalla:'🥇', nombre:'ORO',        color:'#facc15', msg:'¡Increíble! Tiempo récord.' };
+  if (m < 7) return { medalla:'🥈', nombre:'PLATA',      color:'#a4b3c9', msg:'¡Muy bien! Excelente trabajo.' };
+  if (m < 9) return { medalla:'🥉', nombre:'BRONCE',     color:'#fb923c', msg:'¡Lograste completarlo! Buen trabajo.' };
+  return           { medalla:'⭐', nombre:'COMPLETADO', color:'#a78bfa', msg:'¡Lo terminaste! Lo importante es haber aprendido.' };
 }
 
 function attachDD(selector) {

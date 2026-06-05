@@ -16,7 +16,7 @@
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
   border-radius: 999px;
-  font-size: 0.78rem; font-weight: 700; color: var(--cyan);
+  font-size: 0.95rem; font-weight: 700; color: var(--cyan);
   letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.2rem;
 }
 .brand-tag::before {
