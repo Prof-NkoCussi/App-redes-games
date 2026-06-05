@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP4 — IPv4, Subnetting e IPv6 · Redes I Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/shared.css">
+  <link rel="stylesheet" href="tp4.css">
+</head>
+<body>
+  <div class="bg-network">
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+  </div>
+
+  <!-- PANTALLA INTRO -->
+  <div id="tp4-intro">
+    <div class="tp4-intro-wrap">
+      <div class="tp4-intro-tag">TP 04 · Multi-ronda</div>
+      <h2 class="tp4-intro-title">Direccionamiento IPv4<br>e Introducción a IPv6</h2>
+      <p class="tp4-intro-sub">5 rondas progresivas · el cronómetro arranca al empezar</p>
+      <div class="tp4-rounds-preview">
+        <div class="tp4-rnd-card">
+          <div class="tp4-rnd-num">Ronda 1</div>
+          <div class="tp4-rnd-icon">🌍</div>
+          <div class="tp4-rnd-name">¿Pública<br>o Privada?</div>
+        </div>
+        <div class="tp4-rnd-card">
+          <div class="tp4-rnd-num">Ronda 2</div>
+          <div class="tp4-rnd-icon">🔤</div>
+          <div class="tp4-rnd-name">Clase<br>A / B / C</div>
+        </div>
+        <div class="tp4-rnd-card">
+          <div class="tp4-rnd-num">Ronda 3</div>
+          <div class="tp4-rnd-icon">📌</div>
+          <div class="tp4-rnd-name">Estática<br>o Dinámica</div>
+        </div>
+        <div class="tp4-rnd-card">
+          <div class="tp4-rnd-num">Ronda 4</div>
+          <div class="tp4-rnd-icon">⚙️</div>
+          <div class="tp4-rnd-name">Dir. Especiales<br>IPv4</div>
+        </div>
+        <div class="tp4-rnd-card">
+          <div class="tp4-rnd-num">Ronda 5</div>
+          <div class="tp4-rnd-icon">🆚</div>
+          <div class="tp4-rnd-name">IPv4<br>vs IPv6</div>
+        </div>
+      </div>
+      <div class="tp4-intro-acts">
+        <button class="btn btn-o tp4-btn-start" onclick="tp4Start()">▶ Empezar Juego</button>
+        <button class="btn btn-g" onclick="goMenu()">← Volver al menú</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA DE JUEGO -->
+  <div id="tp4-game" style="display:none">
+    <div class="tp4-game-wrap">
+      <div class="tp4-header">
+        <button class="sb-back" onclick="goMenu()">← Menú</button>
+        <span class="tp4-rnd-badge" id="tp4-rnd-badge">Ronda 1</span>
+        <span class="tp4-rnd-title" id="tp4-rnd-title">¿Pública o Privada?</span>
+        <span class="tp4-htimer" id="tp4-timer">⏱ 0:00</span>
+        <span class="tp4-herrs">Errores: <span id="tp4-errs">0</span></span>
+      </div>
+      <div class="tp4-content" id="tp4-content"></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE RESULTADOS -->
+  <div id="modal-tp4">
+    <div class="tp4-res-box">
+      <div class="tp4-res-sub">TP 04 · Completado</div>
+      <div class="tp4-res-title">🏆 ¡TP4 Completado!</div>
+      <div class="tp4-medal" id="tp4-medal">🥇</div>
+      <div class="tp4-medal-name" id="tp4-medal-name">ORO</div>
+      <div class="tp4-res-time" id="tp4-res-time">⏱ Tiempo: 0:00</div>
+      <div class="tp4-res-stats" id="tp4-res-stats"></div>
+      <div id="tp4-badges"></div>
+      <div class="tp4-rondas" id="tp4-rondas"></div>
+      <div class="tp4-res-acts">
+        <button class="btn btn-o" onclick="tp4Replay()">🔄 Jugar de nuevo</button>
+        <button class="btn btn-g" onclick="goMenu()">🏠 Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/shared.js"></script>
+  <script src="tp4.js"></script>
+</body>
+</html>

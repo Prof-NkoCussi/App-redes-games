@@ -12,7 +12,7 @@ const TPS = [
     active: true, game: "dragdrop"
   },
   { n: 3,  title: "Cableado + OSI/TCP-IP",         type: "Ordená las Capas",      desc: "Armá el cable con la norma correcta y apilá las capas del modelo OSI.",         active: true },
-  { n: 4,  title: "IPv4, Subnetting e IPv6",        type: "¿Pública o Privada?",   desc: "Clasificá direcciones IP en tiempo récord y resolvé subredes.",                  active: false },
+  { n: 4,  title: "IPv4, Subnetting e IPv6",        type: "¿Pública o Privada?",   desc: "Clasificá direcciones IP en tiempo récord y resolvé subredes.",                  active: true },
   { n: 5,  title: "VLSM + NAT",                    type: "Simulador de NAT",       desc: "Mirá cómo el router traduce IPs privadas a una pública.",                        active: false },
   { n: 6,  title: "Recursos Compartidos",           type: "Gestor de Permisos",    desc: "Asigná permisos a usuarios sobre carpetas y archivos.",                          active: false },
   { n: 7,  title: "TCP vs UDP",                    type: "Elige el Protocolo",     desc: "Aparece un escenario, elegís TCP o UDP rápido.",                                 active: false },
