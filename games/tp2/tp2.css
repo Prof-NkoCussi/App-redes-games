@@ -1,3 +1,6 @@
+#tp2-intro { position: relative; z-index: 1; }
+#tp2-game  { position: relative; z-index: 1; }
+
 .tp2-intro-wrap {
   min-height:100vh; display:flex; flex-direction:column;
   align-items:center; justify-content:center; padding:2rem 1.5rem;
