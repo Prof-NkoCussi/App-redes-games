@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP5 — Enrutamiento y NAT · Redes I Games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/shared.css">
+  <link rel="stylesheet" href="tp5.css">
+</head>
+<body>
+  <div class="bg-network">
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+    <div class="node"></div>
+  </div>
+
+  <!-- PANTALLA INTRO -->
+  <div id="tp5-intro">
+    <div class="tp5-intro-wrap">
+      <div class="tp5-intro-tag">TP 05 · Multi-ronda</div>
+      <h2 class="tp5-intro-title">Enrutamiento y NAT</h2>
+      <p class="tp5-intro-sub">5 rondas progresivas · el cronómetro arranca al empezar</p>
+      <div class="tp5-rounds-preview">
+        <div class="tp5-rnd-card">
+          <div class="tp5-rnd-num">Ronda 1</div>
+          <div class="tp5-rnd-icon">🛠️</div>
+          <div class="tp5-rnd-name">Funciones<br>del Router</div>
+        </div>
+        <div class="tp5-rnd-card">
+          <div class="tp5-rnd-num">Ronda 2</div>
+          <div class="tp5-rnd-icon">🛣️</div>
+          <div class="tp5-rnd-name">Estático<br>o Dinámico</div>
+        </div>
+        <div class="tp5-rnd-card">
+          <div class="tp5-rnd-num">Ronda 3</div>
+          <div class="tp5-rnd-icon">🚪</div>
+          <div class="tp5-rnd-name">Tipos<br>de NAT</div>
+        </div>
+        <div class="tp5-rnd-card tp5-rnd-card-star">
+          <div class="tp5-rnd-num">Ronda 4</div>
+          <div class="tp5-rnd-icon">🌟</div>
+          <div class="tp5-rnd-name">Simulador<br>PAT</div>
+        </div>
+        <div class="tp5-rnd-card">
+          <div class="tp5-rnd-num">Ronda 5</div>
+          <div class="tp5-rnd-icon">📋</div>
+          <div class="tp5-rnd-name">Completá<br>la Tabla NAT</div>
+        </div>
+      </div>
+      <div class="tp5-intro-acts">
+        <button class="btn btn-pink tp5-btn-start" onclick="tp5Start()">▶ Empezar Juego</button>
+        <button class="btn btn-g" onclick="goMenu()">← Volver al menú</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PANTALLA DE JUEGO -->
+  <div id="tp5-game" style="display:none">
+    <div class="tp5-game-wrap">
+      <div class="tp5-header">
+        <button class="sb-back" onclick="goMenu()">← Menú</button>
+        <span class="tp5-rnd-badge" id="tp5-rnd-badge">Ronda 1</span>
+        <span class="tp5-rnd-title" id="tp5-rnd-title">Funciones del Router</span>
+        <span class="tp5-htimer" id="tp5-timer">⏱ 0:00</span>
+        <span class="tp5-herrs">Errores: <span id="tp5-errs">0</span></span>
+      </div>
+      <div class="tp5-content" id="tp5-content"></div>
+    </div>
+  </div>
+
+  <!-- MODAL DE RESULTADOS -->
+  <div id="modal-tp5">
+    <div class="tp5-res-box">
+      <div class="tp5-res-sub">TP 05 · Completado</div>
+      <div class="tp5-res-title">🏆 ¡TP5 Completado!</div>
+      <div class="tp5-medal" id="tp5-medal">🥇</div>
+      <div class="tp5-medal-name" id="tp5-medal-name">ORO</div>
+      <div class="tp5-res-time" id="tp5-res-time">⏱ Tiempo: 0:00</div>
+      <div class="tp5-res-stats" id="tp5-res-stats"></div>
+      <div id="tp5-badges"></div>
+      <div class="tp5-rondas" id="tp5-rondas"></div>
+      <div class="tp5-res-acts">
+        <button class="btn btn-pink" onclick="tp5Replay()">🔄 Jugar de nuevo</button>
+        <button class="btn btn-g" onclick="goMenu()">🏠 Menú</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../js/shared.js"></script>
+  <script src="tp5.js"></script>
+</body>
+</html>
